@@ -12,7 +12,6 @@ app.get('/', (req, res) => {
   })
   
 
-const morganOption = (process.env.NODE_ENV === 'production')
 const morganOption = (NODE_ENV === 'production')
   ? 'tiny'
   : 'common';
