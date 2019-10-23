@@ -36,11 +36,11 @@ bookmarksRouter
   
     bookmarks.push(bookmark);
 
-    logger.info(`Bookmark with id ${id} created`);
+    logger.info(`Bookmark with id ${bookmark_id} created`);
   
     res
       .status(201)
-      .location(`http://localhost:8000/bookmark/${id}`)
+      .location(`http://localhost:8000/bookmark/${bookmark_id}`)
       .json(bookmark);
 })
 
@@ -69,7 +69,7 @@ bookmarksRouter
 
    bookmarks.splice(bookmarkIndex, 1);
 
-   logger.info(`Bookmark with id ${id} deleted.`);
+   logger.info(`Bookmark with id ${bookmark_id} deleted.`);
 
    res
      .status(204).end();
