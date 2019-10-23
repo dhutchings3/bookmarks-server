@@ -40,7 +40,7 @@ bookmarksRouter
   
     res
       .status(201)
-      .location(`http://localhost:8000/bookmark/${bookmark_id}`)
+      .location(`http://localhost:8000/bookmarks/${bookmark_id}`)
       .json(bookmark);
 })
 
@@ -48,7 +48,7 @@ bookmarksRouter
   .route('/bookmarks/:bookmark_id')
   .get((req, res) => {
     const { bookmark_id } = req.params;
-    const bookmark = store.bookmarks.find(c => c.id == bookmark_id)
+    const bookmark = bookmarks.find(c => c.id == bookmark_id)
     // make sure we found a bookmark
    if (!bookmark) {
          logger.error(`Bookmark with id ${bookmark_id} not found.`);
