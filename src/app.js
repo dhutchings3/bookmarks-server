@@ -17,7 +17,8 @@ app.use(cors())
 app.use(helmet())
 app.use(validateBearerToken)
 
-app.use(bookmarksRouter)
+app.use('/api/bookmarks', bookmarksRouter)
+// removing /bookmarks to just /api will make tests pass
 
 app.get('/', (req, res) => {
   res.send('Hello, world!')
